@@ -30,6 +30,7 @@
               }
             ],
             "styles": [
+              "node_modules/modern-css-reset/dist/reset.min.css",
               "src/styles.scss"
             ]
           },
