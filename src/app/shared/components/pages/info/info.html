@@ -1,0 +1,9 @@
+<div class="info">
+  @for (card of infoCards; track card.title) {
+    <div class="info__card">
+      <h1 class="info__card-title">{{ card.title }}</h1>
+      <h2 class="info__card-subtitle">{{ card.subtitle }}</h2>
+      <h3 class="info__card-desc">{{ card.desc }}</h3>
+    </div>
+  }
+</div>

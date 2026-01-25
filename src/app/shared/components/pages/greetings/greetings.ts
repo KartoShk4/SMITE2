@@ -3,7 +3,7 @@ import {CarouselModule, OwlOptions} from 'ngx-owl-carousel-o';
 import {Button} from '@app/shared/components/button/button';
 
 @Component({
-  selector: 'app-greetings',
+  selector: 'sm-greetings',
   imports: [
     CarouselModule,
     Button
