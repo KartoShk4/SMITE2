@@ -1,5 +1,9 @@
 @use "variables" as *;
 
+* {
+  text-decoration: none;
+}
+
 body {
   color: $color-black;
 }

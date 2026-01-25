@@ -3,7 +3,7 @@
 .greetings {
   padding: $spacing-lg 0;
 
-  &__block--wrapper {
+  &__block-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@
     padding: $spacing-lg;
   }
 
-  &__block--info {
+  &__block-info {
     max-width: 615px;
   }
 
@@ -43,7 +43,7 @@
     gap: $spacing-md;
   }
 
-  &__block--images {
+  &__block-images {
     width: 100%;
     height: auto;
     border-radius: 12px;

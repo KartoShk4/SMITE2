@@ -1,0 +1,25 @@
+@use "variables" as *;
+
+.last-updates {
+  padding-top: $spacing-md;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 24px;
+    color: $color-black;
+  }
+
+  &__title-link {
+    color: $color-orange;
+    font-weight: 500;
+  }
+
+  &__card {
+    padding-top: $spacing-md;
+  }
+}

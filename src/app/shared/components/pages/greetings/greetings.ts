@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {CarouselModule, OwlOptions} from 'ngx-owl-carousel-o';
-import {Button} from '@app/shared/components/button/button';
+import {Button} from '@app/shared/components/common/button/button';
 
 @Component({
   selector: 'sm-greetings',
