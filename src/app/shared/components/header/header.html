@@ -1,3 +1,18 @@
-<a href="/">Главная</a>
-<a href="/news">Новости</a>
-<a href="/update">Обновления</a>
+<header class="header">
+  <div class="header__container container">
+    <nav class="header__menu">
+        <app-logo/>
+      <ul class="header__list">
+        <li class="header__item" routerLinkActive="header__item--active" [routerLinkActiveOptions]="{ exact: true }">
+          <a class="header__link" [routerLink]="'/'">Главная</a>
+        </li>
+        <li class="header__item" routerLinkActive="header__item--active">
+          <a class="header__link" [routerLink]="'/news'">Новости</a>
+        </li>
+        <li class="header__item" routerLinkActive="header__item--active">
+          <a class="header__link" [routerLink]="'/update'">Обновления</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
