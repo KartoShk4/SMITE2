@@ -10,3 +10,8 @@ body {
   margin: 0 auto;
   padding: 0 $container-padding;
 }
+
+.owl-stage {
+  display: flex !important;
+}
+

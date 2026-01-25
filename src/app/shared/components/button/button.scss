@@ -1,0 +1,63 @@
+@use "variables" as *;
+
+.sm-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &--primary {
+    background: $color-orange;
+    color: $color-white;
+    padding: 12px 24px;
+    border: none;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: $color-orange-dark;
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    border: 1px solid $color-orange;
+    color: $color-orange;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: $color-orange-extra-light;
+    }
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &--loading {
+    cursor: progress;
+  }
+}
+
+.sm-button {
+  &--sm {
+    height: 30px;
+    padding: 0 12px;
+    font-size: 14px;
+  }
+
+  &--md {
+    height: 50px;
+    padding: 12px 24px;
+    font-size: 18px;
+  }
+
+  &--lg {
+    height: 48px;
+    padding: 0 24px;
+    font-size: 20px;
+  }
+}
+

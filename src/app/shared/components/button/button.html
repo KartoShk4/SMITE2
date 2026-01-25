@@ -1,0 +1,11 @@
+<button
+  class="sm-button"
+  [type]="type()"
+  [disabled]="disabled() || loading()"
+  [ngClass]="classes()"
+  [attr.aria-busy]="loading() ? 'true' : null">
+  @if (loading()) {
+    <span class="sm-button__spinner" aria-hidden="true"></span>
+  }
+  <ng-content></ng-content>
+</button>
