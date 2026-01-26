@@ -1,0 +1,100 @@
+@use "variables" as *;
+
+.footer {
+  background-color: $color-black;
+  padding: $spacing-lg;
+  color: $color-white;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    padding-bottom: $spacing-lg;
+  }
+
+  &__logo {
+    padding-bottom: $spacing-md;
+    ::ng-deep {
+      .logo__text {
+        color: $color-white;
+
+        .logo__number {
+          color: $color-orange;
+        }
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    font-size: 14px;
+    color: $color-text-senary;
+    line-height: 20px;
+    width: 288px;
+  }
+
+  &__title  {
+    font-size: 18px;
+    line-height: 28px;
+    padding-bottom: $spacing-md;
+    width: 288px;
+  }
+
+  &__link {
+    color: $color-text-senary;
+    font-size: 14px;
+    margin-bottom: $spacing-sm;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-orange;
+    }
+  }
+
+  &__subsribers {
+    display: flex;
+    margin-top: $spacing-md;
+  }
+
+  &__email {
+    width: 165px;
+    height: 40px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: none;
+    outline: none;
+    padding-left: $spacing-sm;
+    font-size: 14px;
+  }
+
+  &__email::placeholder {
+      color: $color-text-quinary;
+      font-size: 14px;
+  }
+
+  ::ng-deep {
+    .sm-button--sm {
+      height: 40px;
+      width: 110px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      font-size: 14px;
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid $color-text-quinary;
+    text-align: center;
+  }
+
+  &__copyright {
+    padding-top: $spacing-md;
+    color: $color-text-senary;
+    font-size: 14px;
+  }
+}

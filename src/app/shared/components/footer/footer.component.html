@@ -1,1 +1,45 @@
-<p>footer works!</p>
+<div class="footer">
+  <div class="footer__container container">
+    <div class="footer__top">
+      <div class="footer__info">
+        <div class="footer__logo">
+          <sm-logo></sm-logo>
+        </div>
+        <div class="footer__text">
+          Главный информационный портал для игроков SMITE 2. Будьте в курсе новостей, обновлениях и патчах.
+        </div>
+      </div>
+      <div class="footer__info">
+        <h2 class="footer__title">Быстрые ссылки</h2>
+        <a class="footer__link" [routerLink]="'/'">Главная</a>
+        <a class="footer__link" [routerLink]="'/news'">Новости</a>
+        <a class="footer__link" [routerLink]="'/update'">Обновления</a>
+      </div>
+      <div class="footer__info">
+        <h2 class="footer__title">Ресурсы</h2>
+        <a class="footer__link" [routerLink]="'/'">Игровая механика</a>
+        <a class="footer__link" [routerLink]="'/news'">Руководства сообщества</a>
+        <a class="footer__link" [routerLink]="'/update'">Часто задаваемые вопросы</a>
+      </div>
+      <div class="footer__info">
+        <h2 class="footer__title">Подпишись на обновления</h2>
+        <p class="footer__text">Подпишитесь, чтобы получать еженедельные обновления о SMITE 2.</p>
+        <form class="footer__subsribers">
+          <input class="footer__email" type="email" id="email" name="email" placeholder="email@example.com">
+          <sm-button
+            type="submit"
+            size="sm"
+            class="footer__btn-email">
+            Подписаться
+          </sm-button>
+        </form>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copyright">SMITE 2 — товарный знак Hi-Rez Studios. Это информационный сайт, созданный
+        фанатами.
+      </div>
+      <div class="footer__copyright">© 2026 SMITE 2 Portal. Все права защищены.</div>
+    </div>
+  </div>
+</div>
