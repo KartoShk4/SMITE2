@@ -20,7 +20,20 @@
     font-weight: 500;
   }
 
-  &__card {
+  &__cards {
     padding-top: $spacing-md;
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-lg;
+    justify-content: center;
+
+    sm-card {
+      flex: 1; // Карточки растягиваются равномерно
+      min-width: 280px; // Минимальная ширина для читаемости
+      max-width: 400px; // Максимальная ширина для красоты
+      display: flex;
+      flex-direction: column;
+      height: 100%; // Занимают всю высоту контейнера
+    }
   }
 }

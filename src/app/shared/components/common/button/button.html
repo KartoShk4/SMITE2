@@ -1,11 +1,24 @@
-<button
-  class="sm-button"
-  [type]="type()"
-  [disabled]="disabled() || loading()"
-  [ngClass]="classes()"
-  [attr.aria-busy]="loading() ? 'true' : null">
-  @if (loading()) {
-    <span class="sm-button__spinner" aria-hidden="true"></span>
-  }
-  <ng-content></ng-content>
-</button>
+@if (routerLink()) {
+  <a
+    class="sm-button"
+    [routerLink]="routerLink()"
+    [ngClass]="classes()"
+    [attr.aria-busy]="loading() ? 'true' : null">
+    @if (loading()) {
+      <span class="sm-button__spinner" aria-hidden="true"></span>
+    }
+    <ng-content></ng-content>
+  </a>
+} @else {
+  <button
+    class="sm-button"
+    [type]="type()"
+    [disabled]="disabled() || loading()"
+    [ngClass]="classes()"
+    [attr.aria-busy]="loading() ? 'true' : null">
+    @if (loading()) {
+      <span class="sm-button__spinner" aria-hidden="true"></span>
+    }
+    <ng-content></ng-content>
+  </button>
+}

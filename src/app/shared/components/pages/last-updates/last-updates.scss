@@ -20,7 +20,20 @@
     font-weight: 500;
   }
 
-  &__card {
+  &__cards {
     padding-top: $spacing-md;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: $spacing-lg;
+    justify-content: center;
+
+    // Стили для карточек в flex раскладке
+    sm-card {
+      flex: 1;
+      min-width: 280px;
+      max-width: 400px;
+      height: 380px; // Фиксированная высота всей карточки
+    }
   }
 }

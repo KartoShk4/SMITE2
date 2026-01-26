@@ -1,1 +1,46 @@
-<p>news works!</p>
+<div class="news-page">
+  <div class="container">
+    <h1 class="news-page__title">Все новости</h1>
+
+    @if (isLoading()) {
+      <div class="news-page__loading">
+        <p>Загрузка новостей...</p>
+      </div>
+    } @else if (isLoaded()) {
+      <div class="news-page__grid">
+        @for (news of paginatedNews(); track news.id) {
+          <sm-card [news]="news"></sm-card>
+        } @empty {
+          <p>Новостей пока нет</p>
+        }
+      </div>
+
+      <!-- Пагинация -->
+      @if (totalPages() > 1) {
+        <div class="news-page__pagination">
+          <button
+            class="news-page__pagination-btn"
+            (click)="prevPage()"
+            [disabled]="currentPage() === 1">
+            ← Назад
+          </button>
+
+          <div class="news-page__pagination-info">
+            Страница {{ currentPage() }} из {{ totalPages() }}
+          </div>
+
+          <button
+            class="news-page__pagination-btn"
+            (click)="nextPage()"
+            [disabled]="currentPage() === totalPages()">
+            Вперед →
+          </button>
+        </div>
+      }
+    } @else {
+      <div class="news-page__error">
+        <p>Не удалось загрузить новости. Попробуйте обновить страницу.</p>
+      </div>
+    }
+  </div>
+</div>

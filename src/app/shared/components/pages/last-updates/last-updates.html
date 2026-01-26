@@ -1,9 +1,11 @@
 <div class="last-updates">
   <div class="last-updates__header">
     <h1 class="last-updates__title">Последние обновления</h1>
-    <a class="last-updates__title-link" [routerLink]="'updates'">Посмотреть все</a>
+    <a class="last-updates__title-link" [routerLink]="'update'">Посмотреть все</a>
   </div>
-  <div class="last-updates__card">
-    <sm-card></sm-card>
+  <div class="last-updates__cards">
+    @for (news of newsList; track news.id) {
+      <sm-card [news]="news" [fixedHeight]="true"></sm-card>
+    }
   </div>
 </div>

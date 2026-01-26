@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {Tag} from '@app/shared/components/common/tag/tag';
+import {News} from '@app/features/news/models/news.model';
 
 @Component({
   selector: 'sm-card',
@@ -12,30 +13,12 @@ import {Tag} from '@app/shared/components/common/tag/tag';
   styleUrl: './card.scss',
 })
 export class Card {
+  @Input({required: true})
+  news!: News;
 
-  lastNews = [
-    {
-      images: '/images/card-news.png',
-      tag: 'Объявление',
-      title: 'Изменения баланса в 8 сезоне',
-      desc: 'Внесены существенные изменения в характеристики богов и предметов для нового соревновательного сезона',
-      date: '25.01.2026',
-    },
-    {
-      images: '/images/card-news.png',
-      tag: 'Новость',
-      title: 'Изменения баланса в 8 сезоне',
-      desc: 'Внесены существенные изменения в характеристики богов и предметов для нового соревновательного сезона',
-      date: '25.01.2026',
-    },
-    {
-      images: '/images/card-news.png',
-      tag: 'Акция',
-      title: 'Изменения баланса в 8 сезоне',
-      desc: 'Внесены существенные изменения в характеристики богов и предметов для нового соревновательного сезона',
-      date: '25.01.2026',
-    },
-  ];
+  @Input()
+  fixedHeight = false;
 
-
+  @Input()
+  compact = false;
 }
