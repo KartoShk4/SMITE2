@@ -1,12 +1,12 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {UpdateService} from '../services/update.service';
-import {Card} from '@app/shared/components/common/card/card';
 import {CommonModule} from '@angular/common';
+import {LongCard} from '@app/shared/components/common/card/long-card/long-card';
 
 @Component({
   standalone: true,
   selector: 'app-update',
-  imports: [Card, CommonModule],
+  imports: [LongCard, CommonModule],
   templateUrl: './update.page.html',
   styleUrls: ['./update.page.scss'],
 })
@@ -14,7 +14,7 @@ export class UpdatePage implements OnInit {
   private readonly updateService = inject(UpdateService);
 
   // Данные для шаблона
-  readonly paginatedNews = this.updateService.paginatedNews;
+  readonly paginatedUpdate = this.updateService.paginatedUpdate;
   readonly currentPage = this.updateService.currentPage;
   readonly totalPages = this.updateService.totalPages;
   readonly isLoading = this.updateService.isLoading;
@@ -22,7 +22,8 @@ export class UpdatePage implements OnInit {
 
   ngOnInit() {
     // Загружаем обновления при инициализации компонента
-    this.updateService.loadNews();
+    console.log('UpgradePage инициализирован, загружаю обновления...');
+    this.updateService.loadUpdate();
   }
 
   // Методы для пагинации

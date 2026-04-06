@@ -8,8 +8,8 @@
       </div>
     } @else if (isLoaded()) {
       <div class="news-page__grid">
-        @for (news of paginatedNews(); track news.id) {
-          <sm-card [news]="news"></sm-card>
+        @for (news of paginatedNews(); track news.id; let i = $index) {
+          <sm-long-card [data]="news" baseRoute="news" [priority]="i === 0"></sm-long-card>
         } @empty {
           <p>Новостей пока нет</p>
         }

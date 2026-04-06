@@ -1,12 +1,12 @@
 import {Component, Input} from '@angular/core';
-import {Card} from '@app/shared/components/common/card/card';
+import {ShortCard} from '@app/shared/components/common/card/short-card/short-card';
 import {RouterLink} from '@angular/router';
 import {Update} from '@app/features/update/models/update.model';
 
 @Component({
   selector: 'sm-last-updates',
   imports: [
-    Card,
+    ShortCard,
     RouterLink
   ],
   templateUrl: './last-updates.html',

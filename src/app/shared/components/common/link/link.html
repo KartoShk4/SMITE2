@@ -1,0 +1,31 @@
+@if (routerLink()) {
+  <a
+    class="sm-button"
+    [routerLink]="routerLink()"
+    [ngClass]="classes()"
+    [attr.aria-disabled]="isDisabled() ? 'true' : null">
+    @if (loading()) {
+      <span class="sm-button__spinner"></span>
+    }
+    <ng-content />
+  </a>
+} @else if (href()) {
+  <a
+    class="sm-button"
+    [href]="isDisabled() ? null : href()"
+    [target]="target()"
+    [ngClass]="classes()"
+    [attr.aria-disabled]="isDisabled() ? 'true' : null">
+    @if (loading()) {
+      <span class="sm-button__spinner"></span>
+    }
+    <ng-content />
+  </a>
+} @else {
+  <span class="sm-button" [ngClass]="classes()" [attr.aria-disabled]="'true'">
+    @if (loading()) {
+      <span class="sm-button__spinner"></span>
+    }
+    <ng-content />
+  </span>
+}

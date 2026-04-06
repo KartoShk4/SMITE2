@@ -6,123 +6,116 @@ export class NewsService {
   private readonly newsData: News[] = [
     {
       id: '1',
-      image: '/images/card-news.png',
+      image: '/images/gods/gods-long/discordia.png',
       tag: 'Объявление',
       title: 'Изменения баланса в 8 сезоне',
       desc: 'Внесены существенные изменения в характеристики богов и предметов для нового соревновательного сезона',
-      createdAt: '2026-01-25'
+      createdAt: '2025-01-25'
     },
     {
       id: '2',
-      image: '/images/card-news.png',
+      image: '/images/gods/gods-long/discordia.png',
       tag: 'Новость',
       title: 'Турнирные обновления',
       desc: 'Новые правила и призовой фонд для предстоящих чемпионатов',
-      createdAt: '2026-01-24'
+      createdAt: '2025-01-24'
     },
     {
       id: '3',
-      image: '/images/card-news.png',
+      image: '/images/gods/gods-long/discordia.png',
       tag: 'Акция',
       title: 'Специальное предложение',
       desc: 'Уникальные скидки на премиум контент и косметические предметы',
-      createdAt: '2026-01-23'
+      createdAt: '2025-01-23'
     },
     {
       id: '4',
-      image: '/images/card-news.png',
+      image: '/images/gods/gods-long/discordia.png',
       tag: 'Обновление',
       title: 'Исправления багов',
       desc: 'Команда разработчиков исправила критические ошибки в игровом клиенте',
-      createdAt: '2026-01-22'
+      createdAt: '2025-01-22'
     },
     {
       id: '5',
-      image: '/images/card-news.png',
+      image: '/images/gods/gods-long/discordia.png',
       tag: 'Событие',
       title: 'Лимитированное событие',
       desc: 'Уникальные награды и временные достижения ждут вас в специальном режиме',
-      createdAt: '2026-01-21'
+      createdAt: '2025-01-21'
     },
     {
       id: '6',
-      image: '/images/card-news.png',
+      image: '/images/gods/gods-long/discordia.png',
       tag: 'Гайд',
       title: 'Советы для новичков',
       desc: 'Полное руководство по основам игры и первым шагам в SMITE 2',
-      createdAt: '2026-01-20'
+      createdAt: '2025-01-20'
     },
     {
       id: '7',
-      image: '/images/card-news.png',
+      image: '/images/gods/gods-long/discordia.png',
       tag: 'Стрим',
       title: 'Прямая трансляция чемпионата',
       desc: 'Следите за матчами профессиональных игроков на официальном Twitch канале',
-      createdAt: '2026-01-19'
+      createdAt: '2025-01-19'
     },
     {
       id: '8',
-      image: '/images/card-news.png',
+      image: '/images/gods/gods-long/discordia.png',
       tag: 'Объявление',
       title: 'Расписание сервера',
       desc: 'Технические работы и плановые обновления на следующей неделе',
-      createdAt: '2026-01-18'
+      createdAt: '2025-01-18'
     },
     {
       id: '9',
-      image: '/images/card-news.png',
+      image: '/images/gods/gods-long/discordia.png',
       tag: 'Новость',
       title: 'Новые скины',
       desc: 'Коллекция косметических предметов для ваших любимых богов',
-      createdAt: '2026-01-17'
+      createdAt: '2025-01-17'
     },
     {
       id: '10',
-      image: '/images/card-news.png',
+      image: '/images/gods/gods-long/discordia.png',
       tag: 'Акция',
       title: 'Бесплатный уикенд',
       desc: 'Получите доступ к премиум контенту совершенно бесплатно',
-      createdAt: '2026-01-16'
+      createdAt: '2025-01-16'
     },
     {
       id: '11',
-      image: '/images/card-news.png',
+      image: '/images/gods/gods-long/discordia.png',
       tag: 'Обновление',
       title: 'UI улучшения',
       desc: 'Обновленный интерфейс с новыми функциями и улучшенной навигацией',
-      createdAt: '2026-01-15'
+      createdAt: '2025-01-15'
     },
     {
       id: '12',
-      image: '/images/card-news.png',
+      image: '/images/gods/gods-long/discordia.png',
       tag: 'Событие',
       title: 'Зимний фестиваль',
       desc: 'Праздничные события и уникальные награды в честь зимних праздников',
-      createdAt: '2026-01-14'
+      createdAt: '2025-01-14'
     },
     {
       id: '13',
-      image: '/images/card-news.png',
-      tag: 'Гайд',
-      title: 'Продвинутые стратегии',
-      desc: 'Тактики и советы от профессиональных игроков для опытных геймеров',
-      createdAt: '2026-01-13'
+      image: '/images/gods/gods-long/kukulcan.png',
+      tag: 'Внутриигровое событие',
+      title: '«Дробовик Куку» уже здесь!',
+      desc: 'Новое: Кукулькан — Аспект Шквала.\n' +
+        'Смени роль с бэклайна на лес, используя этот аспект с высоким взрывным уроном на ближней дистанции.',
+      createdAt: '2026-01-02'
     },
     {
       id: '14',
-      image: '/images/card-news.png',
-      tag: 'Стрим',
-      title: 'Интервью с разработчиками',
-      desc: 'Узнайте о планах на будущее игры и предстоящих обновлениях',
-      createdAt: '2026-01-12'
-    },
-    {
-      id: '15',
-      image: '/images/card-news.png',
-      tag: 'Объявление',
-      title: 'Сезонные награды',
-      desc: 'Новые достижения и награды для завершения сезонных заданий',
-      createdAt: '2026-01-11'
+      image: '/images/gods/gods-long/discordia.png',
+      tag: 'Внутриигровое событие',
+      title: 'Аспект керри-мага для Дискордии: уже в игре с 16 января!',
+      desc: 'Освой новый стиль игры, в котором Дискордия меняет хаос на доминирование.',
+      createdAt: '2026-01-16'
     }
   ];
 

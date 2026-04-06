@@ -4,14 +4,39 @@ import {HttpClient} from '@angular/common/http';
 
 @Injectable({providedIn: 'root'})
 export class UpdateService {
-  private http = inject(HttpClient);
+  private readonly updateData: Update[] = [
+    {
+      id: '1',
+      image: '/images/gods/gods-long/hiron.png',
+      tag: 'Обычное обновление',
+      title: 'НОВОЕ ОБНОВЛЕНИЕ: обновлённый «Joust» и возвращение Хирона',
+      desc: 'Тренируйся под руководством Хирона, сражайся в возрождённом режиме «Joust», и обрушь «Владычество Архидемона» в новой саге Кукулькана.\n',
+      createdAt: '2026-01-26'
+    },
+    {
+      id: '2',
+      image: '/images/gods/gods-long/discordia.png',
+      tag: 'Обычное обновление',
+      title: 'НОВОЕ ОБНОВЛЕНИЕ: обновлённый «Joust» и возвращение Хирона',
+      desc: 'Тренируйся под руководством Хирона, сражайся в возрождённом режиме «Joust», и обрушь «Владычество Архидемона» в новой саге Кукулькана.\n',
+      createdAt: '2026-01-26'
+    },
+    {
+      id: '3',
+      image: '/images/gods/gods-long/kukulcan.png',
+      tag: 'Обычное обновление',
+      title: 'НОВОЕ ОБНОВЛЕНИЕ: обновлённый «Joust» и возвращение Хирона',
+      desc: 'Тренируйся под руководством Хирона, сражайся в возрождённом режиме «Joust», и обрушь «Владычество Архидемона» в новой саге Кукулькана.\n',
+      createdAt: '2026-01-26'
+    }
+  ];
 
   // Сигналы для состояния загрузки
   private readonly _isLoading = signal(true);
   private readonly _isLoaded = signal(false);
   private readonly _currentPage = signal(1);
   private readonly _itemsPerPage = signal(9);
-  private readonly _allNews = signal<Update[]>([]);
+  private readonly _allUpdate = signal<Update[]>([]);
 
   // Публичные readonly сигналы
   readonly isLoading = this._isLoading.asReadonly();
@@ -21,25 +46,25 @@ export class UpdateService {
 
   // Вычисляемые сигналы
   readonly totalPages = computed(() =>
-    Math.ceil(this._allNews().length / this._itemsPerPage())
+    Math.ceil(this._allUpdate().length / this._itemsPerPage())
   );
 
-  readonly paginatedNews = computed(() => {
+  readonly paginatedUpdate = computed(() => {
     const itemsPerPage = this._itemsPerPage();
     const currentPage = this._currentPage();
     const start = (currentPage - 1) * itemsPerPage;
     const end = start + itemsPerPage;
-    return this._allNews().slice(start, end);
+    return this._allUpdate().slice(start, end);
   });
 
   readonly latestThree = computed(() =>
-    [...this._allNews()]
+    [...this._allUpdate()]
       .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
       .slice(0, 3)
   );
 
-  // Загрузка данных из JSON
-  loadNews() {
+  // Загрузка данных
+  loadUpdate() {
     // Если уже загружено, не загружаем повторно
     if (this._isLoaded()) {
       return;
@@ -48,24 +73,20 @@ export class UpdateService {
     this._isLoading.set(true);
     console.log('Начинаю загрузку обновлений...');
 
-    this.http.get<{updates: Update[]}>('assets/data/updates.json')
-      .subscribe({
-        next: (data: {updates: Update[]}) => {
-          console.log('Обновления загружены:', data);
-          // Сортировка по дате (новые сверху)
-          const sortedNews = data.updates.sort(
-            (a: Update, b: Update) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-          );
-          this._allNews.set(sortedNews);
-          this._isLoaded.set(true);
-          console.log('Обновления сохранены в сигнал:', this._allNews());
-          this._isLoading.set(false);
-        },
-        error: (error: any) => {
-          console.error('Ошибка загрузки обновлений:', error);
-          this._isLoading.set(false);
-        }
-      });
+    try {
+      console.log('Данные обновлений:', this.updateData);
+      // Сортировка по дате (новые сверху)
+      const sortedUpdate = [...this.updateData].sort(
+        (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+      );
+      this._allUpdate.set(sortedUpdate);
+      this._isLoaded.set(true);
+      console.log('Обновления сохранены в сигнал:', this._allUpdate());
+      this._isLoading.set(false);
+    } catch (error) {
+      console.error('Ошибка загрузки обновлений:', error);
+      this._isLoading.set(false);
+    }
   }
 
   // Методы навигации

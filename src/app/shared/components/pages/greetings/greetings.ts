@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import {CarouselModule, OwlOptions} from 'ngx-owl-carousel-o';
 import {Button} from '@app/shared/components/common/button/button';
+import {NgOptimizedImage} from '@angular/common';
+import {LinkButton} from '@app/shared/components/common/link/link';
 
 @Component({
   selector: 'sm-greetings',
   imports: [
     CarouselModule,
+    NgOptimizedImage,
+    LinkButton,
     Button
   ],
   templateUrl: './greetings.html',

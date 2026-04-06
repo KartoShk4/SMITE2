@@ -28,6 +28,6 @@ export class HomePage implements OnInit {
   ngOnInit() {
     // Загружаем новости и обновления при инициализации главной страницы
     this.newsService.loadNews();
-    this.updateService.loadNews();
+    this.updateService.loadUpdate();
   }
 }

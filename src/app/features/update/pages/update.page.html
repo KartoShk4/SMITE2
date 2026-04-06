@@ -1,15 +1,15 @@
-<div class="news-page">
+<div class="update-page">
   <div class="container">
-    <h1 class="news-page__title">Все обновления</h1>
+    <h1 class="update-page__title">Все обновления</h1>
 
     @if (isLoading()) {
-      <div class="news-page__loading">
+      <div class="update-page__loading">
         <p>Загрузка обновлений...</p>
       </div>
     } @else if (isLoaded()) {
-      <div class="news-page__grid">
-        @for (news of paginatedNews(); track news.id) {
-          <sm-card [news]="news"></sm-card>
+      <div class="update-page__grid">
+        @for (update of paginatedUpdate(); track update.id; let i = $index) {
+          <sm-long-card [data]="update" baseRoute="update" [priority]="i === 0"></sm-long-card>
         } @empty {
           <p>Обновлений пока нет</p>
         }
@@ -17,20 +17,20 @@
 
       <!-- Пагинация -->
       @if (totalPages() > 1) {
-        <div class="news-page__pagination">
+        <div class="update-page__pagination">
           <button
-            class="news-page__pagination-btn"
+            class="update-page__pagination-btn"
             (click)="prevPage()"
             [disabled]="currentPage() === 1">
             ← Назад
           </button>
 
-          <div class="news-page__pagination-info">
+          <div class="update-page__pagination-info">
             Страница {{ currentPage() }} из {{ totalPages() }}
           </div>
 
           <button
-            class="news-page__pagination-btn"
+            class="update-page__pagination-btn"
             (click)="nextPage()"
             [disabled]="currentPage() === totalPages()">
             Вперед →
@@ -38,7 +38,7 @@
         </div>
       }
     } @else {
-      <div class="news-page__error">
+      <div class="update-page__error">
         <p>Не удалось загрузить обновления. Попробуйте обновить страницу.</p>
       </div>
     }

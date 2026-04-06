@@ -2,11 +2,87 @@
 
 .tag {
   display: inline-block;
-  padding: 4px 6px;
   border-radius: 8px;
-  background: $color-orange;
-  color: $color-white;
   font-weight: 500;
-  font-size: 14px;
   text-align: center;
+  line-height: 1;
+  white-space: nowrap;
+
+  // Размеры
+  &--small {
+    padding: 3px 6px;
+    font-size: 10px;
+  }
+
+  &--medium {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  &--large {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  // Автоматические цвета для разных типов
+  &[style*="background-color: #ff6b35"] {
+    background-color: #ff6b35 !important;
+    color: #ffffff !important;
+  }
+
+  &[style*="background-color: #2196F3"] {
+    background-color: #2196F3 !important;
+    color: #ffffff !important;
+  }
+
+  &[style*="background-color: #4CAF50"] {
+    background-color: #4CAF50 !important;
+    color: #ffffff !important;
+  }
+
+  &[style*="background-color: #FF9800"] {
+    background-color: #FF9800 !important;
+    color: #ffffff !important;
+  }
+
+  &[style*="background-color: #9C27B0"] {
+    background-color: #9C27B0 !important;
+    color: #ffffff !important;
+  }
+
+  &[style*="background-color: #00BCD4"] {
+    background-color: #00BCD4 !important;
+    color: #ffffff !important;
+  }
+
+  &[style*="background-color: #F44336"] {
+    background-color: #F44336 !important;
+    color: #ffffff !important;
+  }
+
+  // Дополнительные варианты через классы
+  &--primary {
+    background-color: #ff6b35;
+    color: #ffffff;
+  }
+
+  &--secondary {
+    background-color: #666666;
+    color: #ffffff;
+  }
+
+  &--success {
+    background-color: #4CAF50;
+    color: #ffffff;
+  }
+
+  &--warning {
+    background-color: #FF9800;
+    color: #000000;
+  }
+
+  &--danger {
+    background-color: #F44336;
+    color: #ffffff;
+  }
 }

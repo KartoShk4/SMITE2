@@ -1,0 +1,37 @@
+<a
+  [routerLink]="[baseRoute, data.id]"
+  class="card"
+  [class.card--fixed-height]="fixedHeight"
+>
+  <div class="card__wrapper">
+    @if (data.image) {
+      <div class="card__images">
+        <img
+          class="card__images-img"
+          [ngSrc]="data.image"
+          [alt]="data.title"
+          [priority]="priority"
+          width="400"
+          height="130"
+        >
+        @if (data.tag) {
+          <div class="card__tag">
+            <sm-tag [label]="data.tag"></sm-tag>
+          </div>
+        }
+      </div>
+    }
+
+    <div class="card__text">
+      <h3 class="card__title">{{ data.title }}</h3>
+      @if (data.desc) {
+        <p class="card__desc">{{ data.desc }}</p>
+      }
+      @if (data.createdAt) {
+        <div class="card__date">
+          {{ data.createdAt }}
+        </div>
+      }
+    </div>
+  </div>
+</a>

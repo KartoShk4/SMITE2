@@ -1,12 +1,12 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {NewsService} from '@app/features/news/services/news.service';
-import {Card} from '@app/shared/components/common/card/card';
+import {LongCard} from '@app/shared/components/common/card/long-card/long-card';
 
 @Component({
   standalone: true,
   selector: 'app-news',
   imports: [
-    Card
+    LongCard
   ],
   templateUrl: './news.page.html',
   styleUrls: ['./news.page.scss'],
