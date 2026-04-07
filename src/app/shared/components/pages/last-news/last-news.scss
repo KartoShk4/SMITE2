@@ -24,8 +24,7 @@
     padding-top: $spacing-md;
     display: flex;
     flex-direction: row;
-    gap: $spacing-lg;
-    justify-content: center;
+    justify-content: space-between;
 
     sm-card {
       flex: 1; // Карточки растягиваются равномерно

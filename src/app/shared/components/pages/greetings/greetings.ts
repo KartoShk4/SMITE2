@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 import {CarouselModule, OwlOptions} from 'ngx-owl-carousel-o';
 import {Button} from '@app/shared/components/common/button/button';
 import {NgOptimizedImage} from '@angular/common';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'sm-greetings',
   imports: [
     CarouselModule,
     NgOptimizedImage,
-    Button
+    Button,
+    RouterLink
   ],
   templateUrl: './greetings.html',
   styleUrl: './greetings.scss',

@@ -6,7 +6,7 @@ export class NewsService {
   private readonly newsData: News[] = [
     {
       id: '1',
-      image: '/images/gods/gods-long/discordia.png',
+      image: 'https://res.cloudinary.com/dpdl5qmvp/image/upload/f_auto,q_auto/discordia_rlunlf',
       tag: 'Объявление',
       title: 'Изменения баланса в 8 сезоне',
       desc: 'Внесены существенные изменения в характеристики богов и предметов для нового соревновательного сезона',
@@ -14,7 +14,7 @@ export class NewsService {
     },
     {
       id: '2',
-      image: '/images/gods/gods-long/discordia.png',
+      image: 'https://res.cloudinary.com/dpdl5qmvp/image/upload/f_auto,q_auto/hiron_hch0bk',
       tag: 'Новость',
       title: 'Турнирные обновления',
       desc: 'Новые правила и призовой фонд для предстоящих чемпионатов',
@@ -22,7 +22,7 @@ export class NewsService {
     },
     {
       id: '3',
-      image: '/images/gods/gods-long/discordia.png',
+      image: 'https://res.cloudinary.com/dpdl5qmvp/image/upload/f_auto,q_auto/kukulcan_dezqzd',
       tag: 'Акция',
       title: 'Специальное предложение',
       desc: 'Уникальные скидки на премиум контент и косметические предметы',

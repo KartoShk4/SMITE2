@@ -5,25 +5,34 @@
       <h2 class="greetings__text">Главный информационный центр по всему, что связано со SMITE 2. Будьте в курсе
         последних новостей о игре, обновлениях и примечаниях к патчам</h2>
       <div class="greetings__actions">
-        <sm-button
-          typeBtn="primary"
-          size="md">
-          Последние обновления
-        </sm-button>
-        <sm-button
-          typeBtn="secondary"
-          size="md">
-          Последние новости
-        </sm-button>
+        <a [routerLink]="['/']" [fragment]="'last-update'">
+          <sm-button
+            typeBtn="primary"
+            size="md">
+            Последние обновления
+          </sm-button>
+        </a>
+        <a [routerLink]="['/']" [fragment]="'last-news'">
+          <sm-button
+            typeBtn="secondary"
+            size="md">
+            Последние новости
+          </sm-button>
+        </a>
       </div>
     </div>
     <div class="greetings__block-images">
       <owl-carousel-o [options]="customOptions">
-        <ng-template carouselSlide><img ngSrc="/images/slide1.jpg" alt="Изображение" width="490" height="158" priority></ng-template>
-        <ng-template carouselSlide><img ngSrc="/images/slide2.jpg" alt="Изображение" width="490" height="158"></ng-template>
-        <ng-template carouselSlide><img ngSrc="/images/slide3.jpg" alt="Изображение" width="490" height="158"></ng-template>
-        <ng-template carouselSlide><img ngSrc="/images/slide4.jpg" alt="Изображение" width="490" height="158"></ng-template>
-        <ng-template carouselSlide><img ngSrc="/images/slide5.jpg" alt="Изображение" width="490" height="158"></ng-template>
+        <ng-template carouselSlide><img ngSrc="/images/slide1.jpg" alt="Изображение" width="490" height="158" priority>
+        </ng-template>
+        <ng-template carouselSlide><img ngSrc="/images/slide2.jpg" alt="Изображение" width="490" height="158">
+        </ng-template>
+        <ng-template carouselSlide><img ngSrc="/images/slide3.jpg" alt="Изображение" width="490" height="158">
+        </ng-template>
+        <ng-template carouselSlide><img ngSrc="/images/slide4.jpg" alt="Изображение" width="490" height="158">
+        </ng-template>
+        <ng-template carouselSlide><img ngSrc="/images/slide5.jpg" alt="Изображение" width="490" height="158">
+        </ng-template>
       </owl-carousel-o>
     </div>
   </div>
