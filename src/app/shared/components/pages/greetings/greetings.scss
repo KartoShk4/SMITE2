@@ -22,7 +22,7 @@
   &__title {
     font-size: 48px;
     font-weight: 700;
-    line-height: 48px;
+    line-height: 110%;
     max-width: 670px;
     margin-bottom: $spacing-md;
 
@@ -73,6 +73,28 @@
             display: block;
           }
         }
+      }
+    }
+  }
+
+  @include down(lg) {
+    &__block-wrapper {
+      flex-direction: column;
+      padding: $spacing-md;
+    }
+  }
+
+  @include down(md) {
+    &__title {
+      font-size: 30px;
+    }
+  }
+
+  @include down(sm) {
+    &__actions {
+      flex-direction: column;
+      ::ng-deep .sm-button {
+        width: 100%;
       }
     }
   }

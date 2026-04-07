@@ -4,8 +4,19 @@
   text-decoration: none;
 }
 
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   color: $color-black;
+  overflow-x: hidden;
 }
 
 .container {
