@@ -33,3 +33,17 @@
   }
 }
 
+@include down(md) {
+  .info {
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-md;
+    margin: $spacing-md 0;
+
+    &__card {
+      padding: $spacing-md;
+      width: 100%;
+    }
+  }
+}
+
