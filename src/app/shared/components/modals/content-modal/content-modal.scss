@@ -1,0 +1,104 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal {
+  background: white;
+  border-radius: 16px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
+
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+    z-index: 1;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    svg {
+      color: #333;
+    }
+  }
+
+  &__content {
+    padding: 32px;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  &__tag {
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+  }
+
+  &__date {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  &__desc {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    white-space: pre-line;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

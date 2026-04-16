@@ -1,45 +1,30 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router, NavigationEnd, RouterLink, RouterLinkActive } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { filter, Subscription } from 'rxjs';
-import { Logo } from '@app/shared/components/common/logo/logo';
+import {Component, inject, signal} from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Logo } from '../common/logo/logo';
+import { ThemeService } from '@app/shared/services/theme.service';
 
 @Component({
   selector: 'app-header',
-  imports: [
-    CommonModule,
-    RouterLink,
-    Logo,
-    RouterLinkActive
-  ],
+  standalone: true,
+  imports: [RouterLink, RouterLinkActive, Logo],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
-export class Header implements OnInit, OnDestroy {
+export class Header {
+  private readonly themeService = inject(ThemeService);
+
+  readonly theme = this.themeService.theme;
   isMenuOpen = false;
-  private routerSub?: Subscription;
 
-  constructor(private router: Router) {}
-
-  ngOnInit(): void {
-    this.routerSub = this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe(() => {
-        this.closeMenu();
-      });
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen; 
   }
 
-  ngOnDestroy(): void {
-    this.routerSub?.unsubscribe();
+  toggleTheme() {
+    this.themeService.toggleTheme();
   }
 
-  toggleMenu(): void {
-    this.isMenuOpen = !this.isMenuOpen;
-    document.body.style.overflow = this.isMenuOpen ? 'hidden' : '';
-  }
-
-  closeMenu(): void {
+  closeMenu() {
     this.isMenuOpen = false;
-    document.body.style.overflow = '';
   }
 }

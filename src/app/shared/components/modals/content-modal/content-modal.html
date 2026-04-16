@@ -1,0 +1,39 @@
+@if (isOpen()) {
+  <div class="modal-backdrop" (click)="close()">
+    @if (content(); as content) {
+      <div class="modal" (click)="$event.stopPropagation()">
+        <button class="modal__close" (click)="close()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <div class="modal__content">
+          @if (content.image) {
+            <div class="modal__image">
+              <img [src]="content.image" [alt]="content.title" />
+            </div>
+          }
+
+          @if (content.tag) {
+            <div class="modal__tag">
+              <sm-tag [label]="content.tag"></sm-tag>
+            </div>
+          }
+
+          <h2 class="modal__title">{{ content.title }}</h2>
+
+          @if (content.createdAt) {
+            <div class="modal__date">
+              {{ content.createdAt }}
+            </div>
+          }
+
+          <div class="modal__desc">
+            {{ content.desc }}
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+}

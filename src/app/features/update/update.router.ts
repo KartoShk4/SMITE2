@@ -1,9 +1,9 @@
 import {Routes} from '@angular/router';
-import {UpdatePage} from './pages/update.page';
+import {UpdatePage} from '@app/features/update/pages/update.page';
 
 export const UPDATE_ROUTES: Routes = [
   {
     path: '',
     component: UpdatePage,
-  },
+  }
 ];

@@ -37,12 +37,17 @@ export class UpdateService {
   private readonly _currentPage = signal(1);
   private readonly _itemsPerPage = signal(9);
   private readonly _allUpdate = signal<Update[]>([]);
+  private readonly _selectedUpdate = signal<Update | null>(null);
+  private readonly _isModalOpen = signal(false);
 
   // Публичные readonly сигналы
   readonly isLoading = this._isLoading.asReadonly();
   readonly isLoaded = this._isLoaded.asReadonly();
   readonly currentPage = this._currentPage.asReadonly();
   readonly itemsPerPage = this._itemsPerPage.asReadonly();
+  readonly allUpdate = this._allUpdate.asReadonly();
+  readonly selectedUpdate = this._selectedUpdate.asReadonly();
+  readonly isModalOpen = this._isModalOpen.asReadonly();
 
   // Вычисляемые сигналы
   readonly totalPages = computed(() =>
@@ -87,6 +92,19 @@ export class UpdateService {
       console.error('Ошибка загрузки обновлений:', error);
       this._isLoading.set(false);
     }
+  }
+
+  openUpdateModal(updateId: string) {
+    const update = this._allUpdate().find(u => u.id === updateId) || null;
+    this._selectedUpdate.set(update);
+    this._isModalOpen.set(true);
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeModal() {
+    this._selectedUpdate.set(null);
+    this._isModalOpen.set(false);
+    document.body.style.overflow = '';
   }
 
   // Методы навигации

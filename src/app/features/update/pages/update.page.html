@@ -9,7 +9,7 @@
     } @else if (isLoaded()) {
       <div class="update-page__grid">
         @for (update of paginatedUpdate(); track update.id; let i = $index) {
-          <sm-long-card [data]="update" baseRoute="update" [priority]="i === 0"></sm-long-card>
+          <sm-long-card [data]="update" contentType="update" [priority]="i === 0"></sm-long-card>
         } @empty {
           <p>Обновлений пока нет</p>
         }

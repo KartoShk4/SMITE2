@@ -5,7 +5,7 @@
   </div>
   <div class="last-news__cards">
     @for (news of newsList; track news.id; let i = $index) {
-      <sm-short-card [data]="news" baseRoute="news" [fixedHeight]="true" [priority]="i === 0"></sm-short-card>
+      <sm-short-card [data]="news" contentType="news" [fixedHeight]="true" [priority]="i === 0"></sm-short-card>
     }
   </div>
 </div>

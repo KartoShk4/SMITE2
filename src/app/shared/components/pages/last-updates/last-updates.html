@@ -4,8 +4,8 @@
     <a class="last-updates__title-link" [routerLink]="'update'">Посмотреть все</a>
   </div>
   <div class="last-updates__cards">
-    @for (news of newsList; track news.id; let i = $index) {
-      <sm-short-card [data]="news" baseRoute="update" [fixedHeight]="true" [priority]="i === 0"></sm-short-card>
+    @for (update of newsList; track update.id; let i = $index) {
+      <sm-short-card [data]="update" contentType="update" [fixedHeight]="true" [priority]="i === 0"></sm-short-card>
     }
   </div>
 </div>

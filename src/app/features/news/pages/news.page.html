@@ -9,7 +9,7 @@
     } @else if (isLoaded()) {
       <div class="news-page__grid">
         @for (news of paginatedNews(); track news.id; let i = $index) {
-          <sm-long-card [data]="news" baseRoute="news" [priority]="i === 0"></sm-long-card>
+          <sm-long-card [data]="news" contentType="news" [priority]="i === 0"></sm-long-card>
         } @empty {
           <p>Новостей пока нет</p>
         }

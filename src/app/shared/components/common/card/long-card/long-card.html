@@ -1,7 +1,7 @@
-<a
-  [routerLink]="[baseRoute, data.id]"
+<div
   class="card"
   [class.card--fixed-height]="fixedHeight"
+  (click)="openModal($event)"
 >
   <div class="card__wrapper">
     @if (data.image) {
@@ -34,4 +34,4 @@
       }
     </div>
   </div>
-</a>
+</div>

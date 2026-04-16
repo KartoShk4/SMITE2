@@ -59,6 +59,12 @@
     padding: 0;
   }
 
+  .header__list-wrapper {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+  }
+
   &__item {
     &--active .header__link {
       color: $color-orange;
@@ -74,6 +80,29 @@
 
     &:hover {
       color: $color-orange;
+    }
+  }
+
+  &__theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    color: $color-text-tertiary;
+    transition: background 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
     }
   }
 
@@ -108,6 +137,10 @@
 
     &__link {
       font-size: 18px;
+    }
+
+    &__theme-toggle {
+      margin-right: 8px;
     }
   }
 }

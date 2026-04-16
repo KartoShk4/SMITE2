@@ -7,7 +7,7 @@
 html {
   scrollbar-width: none;
   -ms-overflow-style: none;
-  overflow-x: hidden;
+  overflow-x: visible;
 }
 
 html::-webkit-scrollbar {
@@ -28,9 +28,4 @@ body {
 
 .owl-stage {
   display: flex !important;
-}
-
-#last-news {
-  padding-top: 90px;
-  margin-top: -90px;
 }

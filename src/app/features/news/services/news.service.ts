@@ -125,12 +125,17 @@ export class NewsService {
   private readonly _currentPage = signal(1);
   private readonly _itemsPerPage = signal(9);
   private readonly _allNews = signal<News[]>([]);
+  private readonly _selectedNews = signal<News | null>(null);
+  private readonly _isModalOpen = signal(false);
 
   // Публичные readonly сигналы
   readonly isLoading = this._isLoading.asReadonly();
   readonly isLoaded = this._isLoaded.asReadonly();
   readonly currentPage = this._currentPage.asReadonly();
   readonly itemsPerPage = this._itemsPerPage.asReadonly();
+  readonly allNews = this._allNews.asReadonly();
+  readonly selectedNews = this._selectedNews.asReadonly();
+  readonly isModalOpen = this._isModalOpen.asReadonly();
 
   // Вычисляемые сигналы
   readonly totalPages = computed(() =>
@@ -175,6 +180,19 @@ export class NewsService {
       console.error('Ошибка загрузки новостей:', error);
       this._isLoading.set(false);
     }
+  }
+
+  openNewsModal(newsId: string) {
+    const news = this._allNews().find(n => n.id === newsId) || null;
+    this._selectedNews.set(news);
+    this._isModalOpen.set(true);
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeModal() {
+    this._selectedNews.set(null);
+    this._isModalOpen.set(false);
+    document.body.style.overflow = '';
   }
 
   // Методы навигации
